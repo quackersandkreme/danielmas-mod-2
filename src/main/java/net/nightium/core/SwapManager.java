@@ -4,7 +4,6 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
-import net.nightium.ui.SwapBossBar;
 
 public class SwapManager {
     private static boolean isActive = false;
