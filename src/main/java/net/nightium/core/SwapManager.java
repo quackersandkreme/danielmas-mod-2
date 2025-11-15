@@ -10,13 +10,12 @@ public class SwapManager {
     private static boolean isActive = false;
     private static int interval = 60;
     private static int timer = 0;
-    private static SwapBossBar bossBar;
+
 
     public static void onServerTick(MinecraftServer server) {
         if (!isActive || server.getTicks() % 20 != 0) return;
 
         timer++;
-        updateBossBar();
 
         if (timer >= interval) {
             timer = 0;
@@ -32,8 +31,6 @@ public class SwapManager {
 
         isActive = true;
         timer = 0;
-        bossBar = new SwapBossBar();
-        bossBar.addAllPlayers(source.getServer());
 
         source.sendFeedback(() -> Text.literal("Started inventory swapping every " + interval + " seconds!")
                 .formatted(Formatting.GREEN), true);
@@ -46,10 +43,6 @@ public class SwapManager {
         }
 
         isActive = false;
-        if (bossBar != null) {
-            bossBar.removeAllPlayers();
-            bossBar = null;
-        }
 
         source.sendFeedback(() -> Text.literal("Stopped inventory swapping!")
                 .formatted(Formatting.RED), true);
@@ -60,12 +53,6 @@ public class SwapManager {
         timer = 0;
         source.sendFeedback(() -> Text.literal("Set swap interval to " + seconds + " seconds!")
                 .formatted(Formatting.GREEN), true);
-    }
-
-    private static void updateBossBar() {
-        if (bossBar != null) {
-            bossBar.update(interval - timer, interval);
-        }
     }
 
     public static boolean isActive() {
