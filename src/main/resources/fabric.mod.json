@@ -1,18 +1,19 @@
 {
 	"schemaVersion": 1,
-	"id": "swapinventory",
+	"id": "danielmas2",
 	"version": "${version}",
-	"name": "SwapInventory",
-	"description": "A mod that shuffles the inventory of two or more players once at a certain time.",
+	"name": "Danielmas Mod 2",
+	"description": "I wonder what this is????",
 	"authors": [
-		"ArisNight"
+		"ArisNight",
+		"quackersandkreme"
 	],
 	"contact": {
-		"homepage": "https://t.me/arissgw",
-		"sources": "https://github.com/ArisNight/SwapInventory/"
+		"homepage": "https://github.com/quackersandkreme",
+		"sources": "https://github.com/quackersandkreme/danielmas-mod-2"
 	},
-	"license": "MIT",
-	"icon": "assets/swapinventory/icon.png",
+	"license": "CC0 1.0",
+	"icon": "assets/danielmas2/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
